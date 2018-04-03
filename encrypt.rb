@@ -13,10 +13,10 @@ def encrypt_file(file, key)
 	encryption = ""
 	passkey = make_passkey(key)
 	master_key = make_master_key(passkey)
-	encrypted_file = file.split(".")[0] + ".encrypted"
+	encrypted_file = file.split(".")[0] + ".enc"
 	File.open(file).readlines.each do |line|
 	 	line.each_char do |char|
-	 		encryption = encryption + (char.ord.to_i * master_key / 30).to_s(32)
+	 		encryption = encryption + (char.ord.to_i * master_key).to_s(32)
 	 		encryption = encryption + "w"
 	 	end
 	end

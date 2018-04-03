@@ -24,14 +24,13 @@ def decrypt_file(key, file)
 
 	begin
 			decryption.each do |letter|
-
-				decrypted_string = decrypted_string + ((letter.to_i(32).to_s(10).to_i * 30) / master_key).chr
+				decrypted_string = decrypted_string + ((letter.to_i(32).to_s(10).to_i) / master_key).chr
 			end
 		rescue
 			p "WRONG PASSWORD!"
 	end
 	print decrypted_string
-	file = file.split(".encrypted")[0] + ".decrypted.txt"
+	file = file.split(".")[0] + ".decrypted.txt"
 	File.open(file, 'w') { 	|file| 
 		file.write(decrypted_string)
 
