@@ -12,4 +12,4 @@ Probably not practical/storage friendly, just fun to code. Needs more random fac
 There is an encrypted file already in the repo.
 to decode it use:
 
-  ruby decrypt.rb file.encrypted ENCRYPTOMATIC
+  ruby decrypt.rb file.enc ENCRYPTOMATIC
